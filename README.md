@@ -3,10 +3,9 @@ website technology checker and web technology lookup. find out what cms, program
 
  Disclaimer : All websites that are scanned with this tool will be exposed publicly on Ful.io.
 
-Usage : 
 ```
 Tech Hunter for Bug Bounty
-Usage: ./tech.sh [options] <domain>
+Usage: ./tech.sh <domain>
 
 Options:
   -t, --tech      Show technology information only
