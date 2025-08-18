@@ -1,4 +1,28 @@
-                  #!/bin/bash                                                                                               RED='\033[0;31m'                                     GREEN='\033[0;32m'                                   YELLOW='\033[1;33m'                                  BLUE='\033[0;34m'                                    CYAN='\033[0;36m'                                    PURPLE='\033[0;35m'                                  ORANGE='\033[0;33m'                                  MAGENTA='\033[1;35m'                                 NC='\033[0m'                                                                                              SHOW_DESC=0                                          SHOW_REF=0                                           DOMAIN=""                                            MODE="all"                                           USER_AGENT_FILE=""                                   PROXY_LIST=""                                        USE_PROXY=0                                                                                               random_ip() {                                            echo $((RANDOM%256)).$((RANDOM%256)).$((RANDOM%256)).$((RANDOM%256))                                  }                                                                                                         get_random_ua() {                                        if [[ -f "$USER_AGENT_FILE" && -s "$USER_AGENT_FILE" ]]; then
+#!/bin/bash                                                                                        
+
+RED='\033[0;31m'                                    
+GREEN='\033[0;32m'                                 
+YELLOW='\033[1;33m'                                 
+BLUE='\033[0;34m'                                   
+CYAN='\033[0;36m'                                  
+PURPLE='\033[0;35m'                                 
+ORANGE='\033[0;33m'                                 
+MAGENTA='\033[1;35m'                               
+NC='\033[0m'                                                                                            
+SHOW_DESC=0                                          
+SHOW_REF=0                                        
+DOMAIN=""                                          
+MODE="all"                                          
+USER_AGENT_FILE=""                                 
+PROXY_LIST=""                                      
+USE_PROXY=0                            
+
+random_ip() {                                          
+       echo $((RANDOM%256)).$((RANDOM%256)).$((RANDOM%256)).$((RANDOM%256))                             
+}                                                                                                        
+
+get_random_ua() {                               
+if [[ -f "$USER_AGENT_FILE" && -s "$USER_AGENT_FILE" ]]; then
         shuf -n 1 "$USER_AGENT_FILE"
     else
         local uas=(
